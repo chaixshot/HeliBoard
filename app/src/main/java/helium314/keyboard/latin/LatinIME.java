@@ -707,6 +707,7 @@ public class LatinIME extends InputMethodService implements
         mClipboardHistoryManager.onDestroy();
         mDictionaryFacilitator.closeDictionaries();
         mSettings.onDestroy();
+        AudioAndHapticFeedbackManager.getInstance().release();
         if (foldableObserver != null)
             foldableObserver.unregister(this);
         unregisterReceiver(mRingerModeChangeReceiver);
